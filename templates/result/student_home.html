@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>cusl-exams-management-system</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img1/favicon.png' %}" rel="icon">
+  <link href="assets/img1/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- FONT AWESOME CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+  integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor1/aos/aos.css ' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor1/bootstrap/css/bootstrap.min.css ' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendo1r/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor1/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor1/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      
+        <a href="{% url 'admin1' %}" class="logo d-flex align-items-center">
+          <!-- <span class="d-none d-lg-block">CUSL-Result Portal</span> -->
+        </a>
+        <img style="width: 60px; margin-left: -250px; margin-right: 50px; margin-top: 30px; margin-bottom:30px;"  src="{% static 'assets/img/cusl.jpeg' %}" alt="">
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+     
+  
+      <div class="search-bar">
+       <!-- <marquee style="font-size: 50px;" behavior="" direction="">Central University Transcripts Management System</marquee> -->
+      </div><!-- End Search Bar -->
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="{% url 'profile' %}"
+            data-bs-toggle="modal" data-bs-target="#exampleModal"
+            >Profile</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}">Logout</a></li>
+          <!-- <li><a class="nav-link scrollto" href="{% url 'admin_redirect' %}">Admin</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+   <div class="container">
+    <div class="row" style="margin-top: 200px;">
+      <div class="col-md-6">
+        <h3>Welcome</h3>
+        <h1>{{request.user.full_name}} </h1>
+
+        <img class="img-thumbnail" src="{{user.profile.image.url}}" alt="">
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+   </div>
+
+
+   
+  
+
+ 
+
+
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable animate__animated animate__fadeIn">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-user"></i>&nbsp;&nbsp;Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="card">
+                  <h3 class="text-center">Profile Information</h3>
+                  <div class="card-body">
+                    <hr>
+                      <div class="mb-3">
+                            <!--Table-->
+                            <div class="row">
+                              <div class="col-md-8">
+                                
+                                  <table class="table bg-white table-borderless">
+                                      <tbody>
+                                          <tr>
+                                              <th scope="row">Name</th>
+                                              <td>{{user.full_name}}</td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">Email</th>
+                                              <td>{{user.email}}</td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">ID Number</th>
+                                              <td>{{user.id_number}}</td>
+                                          </tr>
+                                          
+                                      </tbody>
+                                  </table>
+  
+                              </div>
+                              <div class="col-md-4">
+                                  <img class="img-thumbnail" src="{{user.profile.image.url}}" alt="">
+                              </div>
+                          </div>
+
+                        </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <div class="container fixed-bottom mb-3">
+    <p class="text-center" style="margin-bottom:0px;">&copy; Copyrights cusl-Exams. All rights reserved.</p>
+    <div class="text-center mt-0">
+    Designed by <a href="https://ccmtsl.com/web/">Central University</a>
+    </div>
+  </div>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor1/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor1/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor1/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js1/main.js' %}"></script>
+
+</body>
+
+</html>

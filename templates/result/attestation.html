@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">   
+<head>
+        <!-- meta tag -->
+        <meta charset="utf-8">
+        <title>Central-University-Transcript</title>
+        <meta name="description" content="">
+        <!-- responsive tag -->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.html">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/cusl-logo.jpeg' %}">
+        <!-- Bootstrap v4.4.1 css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <!-- font-awesome css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.css' %}">
+        <!-- slick css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+        <!-- off canvas css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/off-canvas.css' %}">
+        <!-- linea-font css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/linea-fonts.css' %}">
+        <!-- flaticon css  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/flaticon.css' %}">
+        <!-- magnific popup css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css' %}">
+        <!-- Main Menu css -->
+        <link rel="stylesheet" href="{% static 'assets/css/rsmenu-main.css' %}">
+        <!-- spacing css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/rs-spacing.css' %}">
+        <!-- style css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"> <!-- This stylesheet dynamically changed from style.less -->
+        <!-- responsive css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}">
+       
+    </head>
+    <body class="defult-home" style="overflow-y: hidden;">
+        
+        <!--Preloader area start here-->
+        <div id="loader" class="loader orange-color">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="{% static 'assets/images/cusl-logo.jpeg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <!--Preloader area End here--> 
+
+		<!-- Main content Start -->
+        <div class="main-content">
+            <!--Full width header Start-->
+            <div class="full-width-header home8-style4 main-home">
+                <!--Header Start-->
+                <header id="rs-header" class="rs-header">
+                    <!-- Menu Start -->
+                    <div class="topbar-area home9-topbar">
+                        <div class="container">
+                            <div class="row y-middle">
+                                <div class="col-md-7">
+                                    <ul class="topbar-contact">
+                                        <li>
+                                            <i class="flaticon-email"></i>
+                                            <a href="mailto:support@rstheme.com">irkamara359@central.edu.sl</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-location"></i>
+                                            1 Silicon Hills-Mile 91 Freetown-Highway
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 text-right">
+                                    <ul class="topbar-right">
+                                        <li class="login-register">
+                                            <i style="font-size: 20px;" class="fa fa-home"></i>
+                                            <a style="font-size: 20px;"  href="{% url 'index' %}">Back to Home</a>
+                                        </li>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+
+                   
+                </header>
+                <!--Header End-->
+            </div>
+            <!--Full width header End-->
+
+            <!-- Slider Section Start -->
+            <div class="rs-slider main-home" style="margin-top: -150px;">
+                <div  class="rs-carousel owl-carousel" data-loop="true" data-items="1" data-margin="0" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="1" data-md-device-nav="true" data-md-device-dots="false">
+                    <div class="slider-content slide1" style="background: url('{% static "assets/images/slider/main-home/grad1.jpeg" %}'); background-size: cover; background-position: center; background-repeat: no-repeat; overflow-y: hidden; height: 100%;">
+                        <div class="container">
+                            <div class="content-part">
+                                <!-- <div class="sl-sub-title wow bounceInLeft" data-wow-delay="300ms" data-wow-duration="2000ms">The Access to Your Transcripts</div> -->
+                                <h1 class="sl-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms" style="margin-top: 50px;">Letter of Attestation</h1>
+                                <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
+                                    <a class="readon orange-btn main-home" href="" data-toggle="modal" data-target="#exampleModal"><i class="flaticon-search mr-2"></i>Search for Attestation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <!-- Slider Section End -->                    
+
+        </div> 
+        <!-- Main content End -->
+     
+        
+
+      
+
+           <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">SEARCH FOR YOUR ATTESTATION</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Counter Section Start -->
+          <div id="rs-about" class="rs-about style3 pt-100 md-pt-70" style="margin-bottom: 100px; margin-left: 150px;">
+            <div class="container">
+                <div class="row y-middle">
+                    <div class="col-lg-8 off-md-3 lg-pr-0 md-mb-30">
+                        <div class="about-intro">
+                            <div class="sec-title">
+                                <div class="sub-title orange">HERE IS YOUR ATTESTATION</div>
+                                <h2 class="title mb-21">Explore you Attestation after your program of study.</h2>
+                                <div class="desc big">
+                                    <form method="GET" action="{% url 'student_detail' %}">
+                                        {% csrf_token %}
+                                        <input type="text" name="idnumber" class="form-control shadow-none mt-4 mb-3 p-4" placeholder="ID Number" >
+                                        <button type="submit"  class="readon submit-btn p-3" data-toggle="modal" data-target="#exampleModal2"><i class="flaticon-search mr-2"></i>Search for your attestation</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Counter Section End -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+        
+
+
+   <!-- Modal -->
+
+                                                        
+
+        <!-- modernizr js -->
+        <script src="{% static 'assets/js/modernizr-2.8.3.min.js' %}"></script>
+        <!-- jquery latest version -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap v4.4.1 js -->
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <!-- Menu js -->
+        <script src="{% static 'assets/js/rsmenu-main.js' %}"></script> 
+        <!-- op nav js -->
+        <script src="{% static 'assets/js/jquery.nav.js' %}"></script>
+        <!-- owl.carousel js -->
+        <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Slick js -->
+        <script src="{% static 'assets/js/slick.min.js' %}"></script>
+        <!-- isotope.pkgd.min js -->
+        <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+        <!-- imagesloaded.pkgd.min js -->
+        <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+        <!-- wow js -->
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <!-- Skill bar js -->
+        <script src="{% static 'assets/js/skill.bars.jquery.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>        
+         <!-- counter top js -->
+        <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+        <!-- video js -->
+        <script src="{% static 'assets/js/jquery.mb.YTPlayer.min.js' %}"></script>
+        <!-- magnific popup js -->
+        <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>      
+        <!-- plugins js -->
+        <script src="{% static 'assets/js/plugins.js' %}"></script>
+        <!-- contact form js -->
+        <script src="{% static 'assets/js/contact.form.js' %}"></script>
+        <!-- main js -->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+
+<!-- Mirrored from keenitsolutions.com/products/html/educavo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jul 2023 10:45:42 GMT -->
+</html>

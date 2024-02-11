@@ -1,0 +1,100 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css2/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css2/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'assets/css2/style.css' %}">
+
+    <title>User-Login</title>
+  </head>
+  <body>
+  
+
+  <div class="d-lg-flex half">
+    <div class="contents order-1 order-md-1">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <div class="mb-4">
+              <img src="{% static 'assets/img1/central.jpg' %}" alt="Profile" class="rounded-circle" style="width: 110px; margin-left: 170px;">
+              <h1 class="text-center">User Login</h1>
+              <p style="font-size: 17px;" class="mb-4 text-center">Login For Better Experience </p>
+            </div>
+            <form action="#" method="post">
+              {% csrf_token %}
+              <div class="form-group first mb-2">
+                <label style="font-size: 18px;"  >Email</label>
+                <input type="text" class="form-control"   name="email">
+              </div>
+
+              <div class="form-group last mb-3 mt-2">
+                <span class="password-show-toggle js-password-show-toggle"><span class="uil"></span></span>
+                <label style="font-size: 18px;" >Password</label>
+                <input type="password" class="form-control" name="password">
+              </div>
+
+
+                    {% if login_form.non_field_errors %}
+                    {% for err in login_form.non_field_errors %}
+                      <p style="color:red;">Invalid Credentials</p>
+                      {% endfor %}
+                    {% endif %} 
+              
+              <div class="d-flex mb-5 align-items-center">
+                
+                <label class="control control--checkbox mb-0"><span class="caption">
+                  <a style="font-size: 18px;" href="{% url 'admin_redirect' %}" class="forgot-pass">Admin</a>
+                </span>
+                  
+                  
+                </label>
+                <!-- <span class="ml-auto"><a style="font-size: 18px;" href="{% url 'password_reset' %}" class="forgot-pass">Forgot Password?</a></span>  -->
+                
+              </div>
+
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+
+              <!-- <span class="d-block text-center my-4 text-muted">&mdash; or &mdash;</span> -->
+              
+              <div class="social-login">
+                <!-- <a href="#" class="facebook btn d-flex justify-content-center align-items-center">
+                  <span class="icon-facebook mr-3"></span> Login with Facebook
+                </a> -->
+                <!-- <a href="#" class="twitter btn d-flex justify-content-center align-items-center">
+                  <span class="icon-twitter mr-3"></span> Login with  Twitter
+                </a> -->
+                <!-- <a href="{% url 'admin_redirect' %}" class="google btn d-flex justify-content-center align-items-center">
+                  <span class="icon-google mr-3"></span> Login as Administrator
+                </a> -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="bg order-2 order-md-2" style="background-image: url({% static 'assets/images/wesley-penner.jpg' %})"></div>
+
+    
+  </div>
+    
+    
+
+    <script src="{% static 'assets/js2/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js2/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js2/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js2/main.js' %}"></script>
+  </body>
+</html>

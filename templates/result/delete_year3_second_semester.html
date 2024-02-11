@@ -1,0 +1,688 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>cusl-results management system</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+   <!-- FONT AWESOME CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/style.css'%}" rel="stylesheet">
+
+  <!-- ---Result CSS----------- -->
+  <link rel="stylesheet" href="{% static 'assets/css/result.css' %}">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.5.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+ 
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% url 'admin1' %}" class="logo d-flex align-items-center">
+        <!-- <span class="d-none d-lg-block">CUSL-Result Portal</span> -->
+      </a>
+      <img style="width: 60px; margin-left: -250px; margin-right: 50px; margin-top: 30px; margin-bottom:30px;"  src="{% static 'assets/img/cusl.jpeg' %}" alt="">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+     <!-- <marquee style="font-size: 50px;" behavior="" direction="">Central University Result Management System</marquee> -->
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Exams Officer</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{request.user.full_name}} </h6>
+              <span>Head of Exams</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li> -->
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+           
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'logout' %}">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+ <!-- ======= Sidebar ======= -->
+ <aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'admin1' %}">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+   
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Faculty</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'faculty' %}">
+            <i class="bi bi-circle"></i><span>Manage Faculty</span>
+          </a>
+        </li>
+       
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Departments</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'department' %}">
+            <i class="bi bi-circle"></i><span>Manage Departments</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-layout-text-window-reverse"></i><span>Programmes</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'programs' %}">
+            <i class="bi bi-circle"></i><span>manage Programs</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+   
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-bar-chart"></i><span>Courses/courses</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+
+      <!-- ========================COMPUTER SCIENCE courseS========================== -->
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Computer Science</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year4_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year4_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <!-- ======================END OF COMPUTER SCIENCE courseS==================== -->
+
+
+        <!-- =======================BUSINESS INFORMATION TECHNOLOGY courseS====================== -->
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Business Information Tech</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'bit_year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'bit_year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'bit_year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'bit_year4_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year4_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <!-- =====================END OF BUSINESS INFORMATION courseS============================ -->
+
+
+        <!-- =======================MASS COMMUNICATION courseS====================== -->
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Mass Communication</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'masscom_year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'masscom_year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'masscom_year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'masscom_year4_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year4_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <!-- ========================END OF MASS COMMUNICATION courseS========================= -->
+
+
+        <!-- =======================BUSINESS ADMINISTRATION courseS====================== -->
+        <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Business Administration</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul> -->
+        <!-- ========================END OF BUSINESS ADMINISTRATION courseS========================= -->
+
+
+         <!-- ======================ACCOUNTING & FINANCE courseS====================== -->
+         <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Acc. & Finance</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul> -->
+        <!-- ========================END OF ACCOUNTING & FINANCE courseS========================= -->
+
+
+         <!-- ======================NURSING courseS====================== -->
+         <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Nursing</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul> -->
+        <!-- ========================END OF NURSING courseS========================= -->
+
+         <!-- ======================PUBLIC HEALTH courseS====================== -->
+         <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Public Health</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bÈ bi-circle"></i<san<Thiwe Year!Se}ester Two</span>
+    (  `      </a></li>ä     $        <li><hr #lass="dropdown-dividÂr"></li>
+`     `  ` h$ 8lk6<ijHr%f="{% url 'yaar3_fÈrst_semDster' %}">
+  !             <i class?"bi bi-circle"></i><span>Final Year SEmester Oneº/2palJ ((0        (</a></li>
+       0 `    <hi><i Ëref="{% url 'year3_second_semmster' •}">
+    1    0      <i class="bm(vI¨cir+l2</y><span>Fmnal Year Semester$Two<èspan>†   †         </a></li>
+     (   $  </ul>
+      $(  </li>
+          
+        <.ıl!-,~
+        <!--"===9===================8e^ƒ OF PUBLIC HEAÃTH courseS===================-==<== ,-?
+
+     `  <!--(===9==?=<=Ω9========PUBIC RENEWABLE ENERGY courseS=======-======}===>= -->
+        <!-- <ul id="charts-nav" claqs="nav-cott%vt „ØdDapsı & dat·-"s-parejt="#sidear-nav"<
+ 0        <licÏass="nav-item†drmpdowf">
+   !        ,a0class="nav-nink dropdowjØ<mfS¯Â `i‡e-bs-toggle="drop$own" href="#  roÏe="button" aria-expanded="falsu" claÛs="text-cdnuÂ2"Renewajme</a>
+  4        "<tl"clazs5"dropdoo-menw" stila="width: 100%;">
+  `           <li><A href="{%"usl 'year1_first_semester' %}">
+(       `       <Òblapk="bI"ka-sircle"><i><{pan>Virrt†Year SemEster Oj•</span>   "          </a4li:
+  0     $     <li><a(HrEf="{% Url &yuarq◊yec+ntqdMe3Ùer'$%}"?
+                <i class="bI bi-air#ld"></i><span>Girst Yeas Semesder Vwo</span>
+         !    </i><li?
+   p0        <li><hr0clacs="dropdown-divider"></li>
+    `         <li><a`href="{% trl 'yeaR2_fiRst_se-Âster' e}">
+      $ " $!    <a!kl!ss="bi fi-circle"></i><span>Second†Yaar Semester O.e</span>
+              </a></li>
+!   0 ``      <li><a href="{% u2Ï0wYmaV3_second_semester' %}"æ
+       0        <i Clacs="bi bI-cipcle"></i><s`an>Second YEar Semester Two</span>  !         $ <çu<o®6
+              <li><hr class="dropdown-tivider"><?li>ç
+       Ä  `   ºli><a href=&{& url '{ear3_first_semeq4er'(%}">
+†        "      <i clas3="bi ji-ckrcle"></i><span>Thibd Year Sem%steR One</span>
+       0    ( </a></li>
+              <li<a h2db=Çy$0uRl '˘ear3_second_seMesuer' %}">
+                <i class="bi bi-circle"></i><spe.>Dhibd ear S%Ì%sder Two</span>-"†. - " )(  a</a></la>
+          "  0<liæ<xz class="drgpdown,diwider"></li>
+     0      " ºLi>|a†href=2{% url 'year3_first_ÛeMeste2# %}>O      "   0  (  <i class="bi bi-circle"><'i><{pa~>Finam yeas Wemestez One</sp`n>
+0   !   "    `º/a></li> (     )$    †<li=8a$href="[% ur~"'yea23_secon`_semester' %}">
+       (        <È cl!ss="bi biØcircle"<</i><{pa/>Fknal$Yeav Semester`Two,Ôrpan>ä!)(          †</`><?di.
+    ( † $   </ul>
+      (   <-li>
+  0   0 <-ul> /->
+    $"  <!-- =====}===============9^ OFrBCLwQlE ENERGQ cnurseS============Ω========5=== -->
+    </li6
+
+   
+
+ *   
+    <l) cdcss="nav-item">
+      <a†glass="ncv-L`o# collapsed" data-bÛ-tarwet="£icon-nav¢ data-bs-toggle=&collapse" hrÂf="#"æ
+     !  <i!class<"bi bk-x%rson"></i><{p·˛nR‘Udent{</zpan><i claws="bi bi-c*evron-down ms/auto"></i~
+      </a6
+      <ul`if="Icon-nav" cmarr=¢oav-coÓtent co,lapse0* ≈exe)&Á°uerÒjv"#side‚ar-na>">
+        <li>
+!         |a href="{% url 'Student'`%}">
+            <i class="bi bi-circle"></i><span~Manage SÙupent</spanæ
+          </a>
+       4</li>
+      </wl>
+    </li>
+
+    |!-- <li class="nav-item">
+      8a class="lav-lhnk collapsed" data-bs-taÚgep="#iconnav" data-bs-toggle="cgl|apse" href="#"^
+!(`  !  <i glass="bi bi-pmrson"></i><s0an>Students Rmgkstration<-span><i class="bi bi-ghevron-down ms-auto"><.i>
+      </a>
+      <ul id="isonnaw  class="nav-content collaxse " datc-br-parent9"#sidebar-niv">
+        <Ïi>    0    $<a href="{ url 'registgr' %}">
+    $       <a†chass="bi bi-circle"></i><spin>Register Stu‰dnt</span>
+  $       </a>
+       &</li:
+      </ul>
+    </li& -->
+
+
+
+
+
+   !ºli class="nav-itEm">
+      >a class="nav≠l)nk sollapsed" data-bs-tarGet="#icolnavi" data'bs-4ogGle="collapse" href="#">
+      † <i class="bi bm-person"></i><span>Transcrapt14/spaj><i class?"bi bi-chevron=dow. mq-auto"></i>
+      <a>J   `  <ul id="iconnavi" class"nav-content collapse " data-bs-xarent="#sidebar-nav">
+        <li>
+      †   <a$href="{% url 'result' %}"~
+            <i class="bi bi-cir#le"></i><Ûpan>Colputer Scienke</qpan?
+          </a>
+     !  <?hi>
+!     </ul>
+      <um id="iconnavm" class="nav%#ontent collapse " data-bs-pirent="#sidebar-nav"
+      ( <li>
+          <· href="{% url 'bit_resul|' %}">*       (    <i class="ba ji-circle"></i><span>Buriness Invormation Tech<+span>
+     !    </a>
+        |/li>
+      </ul>
+      <ud id="iconnavi" class="nav-conte|t collapse " data-rs-parend=#sidebar-nat">
+   "    <li>
+          <a href="{% url 'm`qscom_rusult' %}">
+            <i class="bi bi-cirale#></i.<span>Mass Com-unycatign<-span>
+ !   0    </a>
+(       </li>
+    a </uh>
+    </li>
+ † †
+    <li class="nav-item">
+      4a class="nav-link collapsed" deta/bs-tarGet="#iconnav" data-bs-toggle="collapse" hrev="#">
+  †     <i class="bi bi-person"></i><spanCertificatesº/span><i class="bi bi-ghevr/o/down m{-aUtg*></i>
+      </a>
+   (  <5l id="iconnAv" class="nav-conÙent collapse " data-bs-paren4="#sidebar-nav">M
+        <li>
+
+   (     <a href="{% url 'search_certificatÂ' '}">
+`           <i clars="bi bi/circle"></i><span>Suarch Certificate<+span>
+     (  " </a>
+        </li>
+      </ul>
+    </li> 
+    
+  </ul>
+
+</aside><!-- End Silerar-->
+
+
+ 
+   
+
+
+  <!--!******b***(********:************* -->
+   0    1%- DELETE CONIRMATION -->  <!-- ***.******************:************ ->
+  <div class="cazd" style="margin-top: 200px; margin-left:(600px;(m`rgin-pig(p: 400px;">
+    <h4 class="text-center mt-5 h3"><small><i class<"fasbfa-trash"></i></Small> Del%|Èng†a Course...</h4>
+  ` <div class="car`=body">
+      ( <div clars="mb-3">
+         0$ 
+            >p class="text-center Ìt-4">Arg you sure you want |o delete this Cour3e?</p>
+  (      †  <form met`od="post" class="teyt-canter">
+              {% c3rf_token %}
+              <button tyxe="submkt"`class="bun btndanger btn/center" data-toggle="modaL" tata-targdt="#deleteModal">Delete</button>
+              ,a href="{• url 'year3_segond_semester'%}" class="bÙn btn-second`ry btn-center">Cancel4/a>
+            </form>
+      " </div>
+    </dav~
+ †/div>
+
+
+  <!-- Modal -->
+  <div claÛs="modal fade" id="deleteModal" |abindex="-1" cole="dialog" aria-labelledby9"deleteModalLabeÏ" aria-hidden="true">
+    <div class="modal-dialog"$rol%="doc}meÆt">
+      <dhv class="modal-content">
+    !   <div clas{="modal%ieader">
+  $       <h5 class="Modal-pitle")id="deleteModaÏLabel">Cojnirm Delete</z5>
+      $   <jutton type=buÙton" class="cnose" data-dismhss="modal" aria-lAbel="Close">*    $       <span apia-hidden="true">&tim%Û;</s0an>"         >/bupton>
+        </dhv>
+$       <div class="moDal-body">-
+     †    Are you sura you want tk delete {{ stu.name }}?	
+        <-div>
+        <hiv cl„ss="modal-footer">
+          4button type="button" class="btn ¢tN-secojdary" data-dismkss="modal">Cancel</button>
+   `      <"utton u˘pe="submiu" class="btn btn-danger">Dedete</button>M
+  !     </div6
+      <+div>  ! </div>J  </dyv>
+*  <!--
+     **************************:
+ $      SWEET ALERT MESSAGS
+     *:*.**********************
+ --æ
+ <!--====sweet†Aseru messageS-->
+ s% fos Ìgssaoe in(messages %u
+ y%!if message.ta's == 'succEss' %} <script`src="https:Ø/unpkg.com/swea|aldrt/dist/sweetalmzt.m)n&
+s".</rcrjpt>
+ <scripd>
+    var m =  {; message }}";
+    swan("pEsfecT !", m, "succuss")
+ </script>
+ {% endif($}
+ {% en`Êo`0,M
+*-
+
+
+ {% for message in messagus %}
+ {% if message.tag{ == 'ebror' %}
+ <scriptasrc<"h|Tps://unpkg.com/sweetalert/‰IsuØwugm|ilezd.mÈn,js"æ</script>
+0>script>
+    var m = "{{ -essagexescapejs|s!fe }}";
+    swal("Waroing !", m, "error")
+ </s#2m±T>ä {•(endif %}	
+ {% enefor(%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
+
+
+ù
+
+
+
+
+
+
+
+
+
+<!-- }Ω===== Footer ======= -->
+<foor%v id="footer class="foO4er fixed-bottom" style="margk.-\eft: 000px;">
+  <!-- <div class= copyrmght  >
+00  fcopy; cpyriglt ?“dvong>srAk.“esults Management SYqtem</span></stro.g?. All Rights Reserved
+  </fiv>0-m>
+  <div class="credit{"?
+    <!m- AlL thu Ïilis(ik the footer shouÏd remain0intact. ,->	
+    <!--$You cao delete the links only if you purchased Ùhe†tro version. -≠∫
+a(  :)-- \icensing ingormation: https://bootstrapmade.aom/license/ -->
+ 0  <!-- Qurcha3e$the pro vErsion with(working PLP/AJU cknt`s|$Ooj%ª https:-/bmotstrApmade.com/nice-admin-b/otstrap-adÌin-html-templata/ -->ä    &cop}+ copYright (DesiGnel by 8a!hze^9#"æBepa"toqnt†gv TechnicAl`Science</a>
+  </dÈv>J</footer><!-- End Footer )->	
+
+ (<a href="#" c,qs{="baak-to-top d-fle8 alkgo-imemS)ca.t%r justify-content-center"~<i class="bi fi-arrOw-up-shgrt"></i></a>
+  <!%- Vendr JS Films -->
+  <script s|c="z,†staticp'assets/vendor/ApexbjaRts/apexchcrts.ei..hs' %}"></script<
+  <script!szc="{5 stauib '·ssmts/vendor.bo/tsupep/js/bootsÙbad&BÁnEl]™)n.js' %}"></scripÙ>
+  <script src="{% static 'assetsOvendÔp?chart.js/chart.umd.js' }&></3crit>
+  <script szc="{%0stapic$ga3suts/vendor/ech!rts/echarts.min.Ís' %}"></scsipt>
+  <script Src="z%`static 'assets/vendob/quil|/quim|.min.js' %}"><ossri`d>
+  ,scrypt$src="% stAtic 'asseÙs/wendlr/simple-datauablesØsimpnÂ-datatablas,js'(%}#></script>
+  <scri0t src="{% statiC"ß#ssetq#÷gÓDoz.tinymce/tinymce.min.Ís' %}"></skri0t>  <script src=&{%$static 'assEds/vendoR/pjP-email-form/validate.jr' %}"><+[cRKd-k
+
+-
+† <script src="{% static 'essetÛ/js/script.js' %}"></script>
+  <#-/ Template MaiN JS File -->ä  <script src="{% stT)G 'assetÛ/js/main.js' %}"></script<
+ "
+
+
+ †|!-- ************DADA"TABLE BL LINKS*j(******"*.****** -->
+  <link hruf="huPw7-Bdn>ectatableÛ.net/v'bs5/Íszip-2.5.0/dt-1.13.4/b-2Æ3.6/b-html5-2.3.6/bprinu-2.3n6/datat`"le{.mincss" rel="ctylesheet".L ™2 (!>{bv!pt"src="https://cdnjscl/udflare.comØajaxlibs/pdfmakE/0.1.36/pdfmake.iin.js"></scripd>	
+    <scvipt!src="https:+#ae§zSÆCdopu6lpre.com/ajax/lib{/pdfmake/0.1.36/vfsfonts.js"></≥cbipt:
+$   <sCrirt Src="httpÛ://c$n.datatajles.net/V/bs5/jszhq-2.5..dt-1*1&ˆmb-2.3.6/b-html5-2.3.6/B-print-6.3*6/datataBles.min.Js"></rcrIpt>
+		
+    
+</bmdy>
+
+</html>

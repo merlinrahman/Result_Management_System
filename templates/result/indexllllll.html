@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--====== Required meta tags ======-->
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!--====== Title ======-->
+  <title>Business | Bootstrap 5 Business Template</title>
+
+  <!--====== Favicon Icon ======-->
+  <link rel="shortcut icon" href="../assets/images/favicon.svg" type="image/svg" />
+
+  <!--====== Bootstrap css ======-->
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+
+  <!--====== Line Icons css ======-->
+  <link rel="stylesheet" href="{% static 'assets/css/lineicons.css' %}" />
+
+  <!--====== Tiny Slider css ======-->
+  <link rel="stylesheet" href="{% static 'assets/css/tiny-slider.css' %}" />
+
+  <!--====== gLightBox css ======-->
+  <link rel="stylesheet" href="{% static 'assets/css/glightbox.min.css' %}" />
+
+  <!-- font-awesome css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'assets/styles.css' %}" />
+</head>
+
+<body style="padding-bottom: -100px;">
+
+  <!--====== NAVBAR NINE PART START ======-->
+
+  <section class="navbar-area navbar-nine">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
+              <img style="width: 70px; margin-right: 50px; margin-left: -30px;" src="{% static 'assets/images/cusl-logo.png' %}" alt="Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
+              aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse sub-menu-bar" id="navbarNine">
+              <p class="display-4">
+                <marquee behavior="" direction="" style="color: white; letter-spacing: 10px; font-size: 20px; margin-right: -700px;">CENTRAL UNIVERSITY STUDENTS RESULT MANAGEMENT SYSTEM</marquee>
+              </p>
+              
+
+              <ul class="navbar-nav me-auto">
+                
+                <li class="nav-item" style="margin-left: 700px;">
+                  
+                  <a class="page-scroll active" style="font-size: 25px;" href="{% url 'login' %}"> <i style="font-size: 20px; margin-right: 5px;" class="fa fa-sign-in"></i>Login</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="page-scroll" href="#services">Services</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="page-scroll" href="#pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#contact">Contact</a>
+                </li> -->
+              </ul>
+            </div>
+
+            <div class="navbar-btn d-none d-lg-inline-block">
+              <a class="menu-bar" href="#side-menu-left"><i class="lni lni-menu"></i></a>
+            </div>
+          </nav>
+          <!-- navbar -->
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== NAVBAR NINE PART ENDS ======-->
+
+  
+
+  <!--====== SIDEBAR PART ENDS ======-->
+
+  <!-- Start header Area -->
+  <section id="hero-area" class="header-area header-eight" style="padding-bottom: -200px; margin-bottom: -100px;">
+    <div class="container">
+      <div class="row align-items-center" style="margin-left: -80px;">
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="header-content" style="margin-top: -30px;" >
+            <h1>Academic transcripts</h1>
+            <p style="color: white; margin-left: -40px;">
+              A transcript is an official summary of your academic performance and progress to date. It will only include final marks confirmed by the appropriate Examination Board. A transcript may be required by prospective employers or educational institutions to which you are applying. <br><br>
+
+              Students are rerquired to access their unofficial transcript by clicking on unofficial transcript button which will display the access mechanism, Official transcripts are only provided by the institution through a transcripts request from students. For more information, you can reach us via these contacts +23278222900/+23288758367 and mail us via irkamara359@central.edu.sl
+            </p>
+            <div class="button">
+              <a href="{% url 'request_transcript' %}" class="btn primary-btn" style="margin-right: 95px; margin-left: -40px;">Official Transcripts</a>
+              <a href="{% url 'student_transcript' %}" style="margin-left: -90px;" class="btn primary-btn">Unofficial Transcripts</a>
+           
+               
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="header-image">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+              <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img class="d-block w-100" src="{% static 'assets/images/hero.jpg' %}" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                      <img class="d-block w-100" src="{% static 'assets/images/jjj.jpg' %}" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                      <img class="d-block w-100" src="{% static 'assets/images/ppp.jpg' %}" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'assets/images/tutu.jpg' %}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{% static 'assets/images/ppp.jpg' %}" alt="Third slide">
+              </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </div>
+            <!-- <img style="margin-bottom: 50px;" src="{% static 'assets/images/hero.jpg' %}" alt="#" /> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div style="background-color: blue; padding-bottom: -200px;">
+    testing
+  </div>
+  <!-- End header Area -->
+
+  <!--====== ABOUT FIVE PART START ======-->
+
+ 
+
+
+  <!--====== js ======-->
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/tiny-slider.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+
+    //===== close navbar-collapse when a  clicked
+    let navbarTogglerNine = document.querySelector(
+      ".navbar-nine .navbar-toggler"
+    );
+    navbarTogglerNine.addEventListener("click", function () {
+      navbarTogglerNine.classList.toggle("active");
+    });
+
+    // ==== left sidebar toggle
+    let sidebarLeft = document.querySelector(".sidebar-left");
+    let overlayLeft = document.querySelector(".overlay-left");
+    let sidebarClose = document.querySelector(".sidebar-close .close");
+
+    overlayLeft.addEventListener("click", function () {
+      sidebarLeft.classList.toggle("open");
+      overlayLeft.classList.toggle("open");
+    });
+    sidebarClose.addEventListener("click", function () {
+      sidebarLeft.classList.remove("open");
+      overlayLeft.classList.remove("open");
+    });
+
+    // ===== navbar nine sideMenu
+    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
+
+    sideMenuLeftNine.addEventListener("click", function () {
+      sidebarLeft.classList.add("open");
+      overlayLeft.classList.add("open");
+    });
+
+ 
+  </script>
+</body>
+
+</html>

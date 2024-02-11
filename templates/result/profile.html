@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>cusl-exams-management-system</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img1/favicon.png' %}" rel="icon">
+  <link href="assets/img1/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor1/aos/aos.css ' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor1/bootstrap/css/bootstrap.min.css ' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendo1r/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor1/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor1/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css1/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div id="logo">
+        <img src="{% static 'assets/img1/cusl-logo.png' %}" alt="" style="width: 50px;">
+      </div>
+
+      <div class="search-bar">
+        <!-- <marquee style="font-size: 50px;" behavior="" direction="">Central University Results Portal</marquee> -->
+       </div><!-- End Search Bar -->
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href=""
+            data-bs-toggle="modal" data-bs-target="#exampleModal"
+            >{{request.user.full_name}} Profile</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}">Logout</a></li>
+          <!-- <li><a class="nav-link scrollto" href="{% url 'admin_redirect' %}">Admin</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+       <!-- Add Faculty Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable animate__animated animate__fadeIn">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-home"></i>&nbsp;&nbsp;Add Faculty</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <h4 class="text-center">Add Faculty</h4>
+                <div class="card-body">
+                    <div class="mb-3">
+                      ............
+                      </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+
+ 
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <div class="container fixed-bottom mb-3">
+    <p class="text-center" style="margin-bottom:0px;">&copy; Copyrights cusl-Exams. All rights reserved.</p>
+    <div class="text-center mt-0">
+    Designed by <a href="https://ccmtsl.com/web/">Central University</a>
+    </div>
+  </div>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor1/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor1/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor1/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor1/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js1/main.js' %}"></script>
+
+</body>
+
+</html>

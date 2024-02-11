@@ -1,0 +1,82 @@
+
+/* 
+*********************************************
+        DATA TABLE EDITING
+*********************************************
+*/
+
+.data_table{
+    background: #fff;
+    padding: 15px;
+    box-shadow: 1px 3px 5px #aaa;
+    border-radius: 20px;
+   }
+
+   .data_table .btn{
+    padding: 2px 5px;
+    margin: 5px 3px 5px 0;
+   }
+
+   table.dataTable thead th {
+     color: white;
+     font-size: 15px;
+}
+
+table.dataTable tbody d {
+    color: white;
+    font-size: 10px;
+}
+
+
+
+
+         /* 
+    *********************************************
+        styling of sweet alert
+    *********************************************
+    */
+    .swal-modal{
+        /* background-color: rgba(0,0,0,0.651); */
+        width: 320px;
+        color: #000000;
+        margin-right: -10%;
+    }
+    .swal-title{
+        color: #000000;
+        font-size: 15px;
+    }
+    .swal-text{
+        color: #000000;
+        font-size: 15px;
+    }
+    
+    .swal-button{
+        padding: 7px 15px;
+        border-radius: 5px;
+        background-color: #147ba1;
+        font-size: 15px;
+        border: 1px solid #147ba1;
+    }
+    
+    .swal-button:focus{
+        box-shadow: none;
+        background: #0053a0;
+        color: #fff;
+    }
+    
+    
+    .swal-button:not([disabled]):hover{
+        background: #147ba1;
+        color: #050303;
+        border: 1px solid #147ba1
+    }
+    
+    .swal-icon--success__hide-corners{
+        background: none !important;
+    }
+    
+    .swal-icon--success:before,
+    .swal-icon--success:after{
+        background: none !important;
+    }
+    

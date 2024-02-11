@@ -1,0 +1,368 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">   
+<head>
+        <!-- meta tag -->
+        <meta charset="utf-8">
+        <title>Central-University-Transcript</title>
+        <meta name="description" content="">
+        <!-- responsive tag -->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.html">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/cusl-logo.jpeg' %}">
+        <!-- Bootstrap v4.4.1 css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <!-- font-awesome css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.css' %}">
+        <!-- slick css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+        <!-- off canvas css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/off-canvas.css' %}">
+        <!-- linea-font css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/linea-fonts.css' %}">
+        <!-- flaticon css  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/flaticon.css' %}">
+        <!-- magnific popup css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css' %}">
+        <!-- Main Menu css -->
+        <link rel="stylesheet" href="{% static 'assets/css/rsmenu-main.css' %}">
+        <!-- spacing css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/rs-spacing.css' %}">
+        <!-- style css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"> <!-- This stylesheet dynamically changed from style.less -->
+        <!-- responsive css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}">
+       
+
+    </head>
+    <body class="defult-home">
+        
+        <!--Preloader area start here-->
+        <div id="loader" class="loader orange-color">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="{% static 'assets/images/cusl-logo.jpeg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <!--Preloader area End here--> 
+
+		<!-- Main content Start -->
+        <div class="main-content" style="overflow-y: hidden;">
+            <!--Full width header Start-->
+            <div class="full-width-header home8-style4 main-home">
+                <!--Header Start-->
+                <header id="rs-header" class="rs-header">
+                    <!-- Menu Start -->
+                    <div class="topbar-area home9-topbar">
+                        <div class="container">
+                            <div class="row y-middle">
+                                <div class="col-md-7">
+                                    
+                                    <ul class="topbar-contact">
+                                        <li>
+                                            <i class="flaticon-email"></i>
+                                            <a href="mailto:support@rstheme.com">irkamara359@central.edu.sl</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-location"></i>
+                                            1 Silicon Hills-Mile 91 Freetown-Highway
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 text-right">
+                                    <ul class="topbar-right">
+                                        <li class="login-register">
+                                            <i style="font-size: 20px;" class="fa fa-sign-in"></i>
+                                            <a style="font-size: 20px;"  href="{% url 'login' %}">Login</a>
+                                        </li>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div >
+                        <div class="container">
+                            <div class="row y-middle">
+                                <marquee style="color: white; letter-spacing: 20px; font-size: 30px; padding-bottom: 20px;" behavior="" direction="">Central University Result Management System</marquee> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-area menu-sticky">
+                        <div class="container">
+                            <div class="row y-middle">
+                                <div class="col-lg-2">
+                                    <a href="{% url 'index' %}">
+                                               
+                                        <img style="width: 30%; margin-left: -90px; margin-top: -30px; border-radius: 50%;" src="{% static 'assets/images/Cusl-logo.jpeg' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-lg-8 text-right">
+                                  <div class="rs-menu-area">
+                                      <div class="main-menu">
+                                          <div class="mobile-menu">
+                                              <a class="rs-menu-toggle">
+                                                  <i class="fa fa-bars"></i>
+                                              </a>
+                                          </div>
+                                          <nav class="rs-menu">
+                                             <ul class="nav-menu">
+                                               
+                                                 <li class="rs-mega-menu mega-rs menu-item-has-children"> <a href="">Transcripts</a>
+                                                    <ul class="mega-menu"> 
+                                                        <li class="mega-menu-container">
+                                                            <div class="mega-menu-innner">
+                                                                <div class="single-megamenu">
+                                                                    <ul class="sub-menu">
+                                                                        <li class=""><a href="{% url 'mass_login' %}">Mass Communication</a> </li>
+                                                                        <li><a href="{%url 'comsci_login' %}">Computer Science</a> </li>
+                                                                        <li><a href="{% url 'bit_login' %}">Business Information Technology</a> </li>
+                                                                        <li class=""><a href="">Accounting & Finance</a> </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="single-megamenu">
+                                                                    <ul class="sub-menu">
+                                                                        <li class=""><a href="">Agricultural Science</a> </li>
+                                                                        <li><a href="">Business Administration</a> </li>
+                                                                        <li><a href="">Public Health</a> </li>
+                                                                        <li><a href="">Renewable Energy</a> </li>
+                                                                        <li><a href="">State Registered Nursing</a> </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="single-megamenu">
+                                                                    <ul class="sub-menu last-sub-menu">
+                                                                        <h2 class="display-4 text-center">Select Your Program of Study</h2>
+                                                                    </ul>
+                                                                </div>  
+                                                            </div>
+                                                        </li>
+                                                    </ul> <!-- //.mega-menu -->
+                                                </li>
+
+                                                
+                                                 <li class="menu-item-has-children">
+                                                    <a href="{% url 'request_transcript' %}">TRANSCRIPT Request</a>
+                                                </li>
+
+
+                                                <!-- <li class="menu-item-has-children">
+                                                    <a data-toggle="modal" data-target="#exampleModal" href="">who are you?</a>
+                                                </li> -->
+                                                
+
+                                                <!-- href="{% url 'request_transcript' %}" -->
+                                               
+                                                
+                                                
+                                                
+                                             </ul> <!-- //.nav-menu -->
+                                          </nav>                                       
+                                      </div> <!-- //.main-menu -->
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 text-right">
+                                    <div class="expand-btn-inner">
+                                        <span>
+                                            <a id="nav-expander" class="nav-expander">
+                                                <span class="dot1"></span>
+                                                <span class="dot2"></span>
+                                                <span class="dot3"></span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu End --> 
+
+                    <!-- Canvas Menu start -->
+                    <nav class="right_menu_togle hidden-md">
+                        <div class="close-btn">
+                            <div id="nav-close">
+                                <div class="line">
+                                    <span class="line1"></span><span class="line2"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{% url 'index' %}">
+                                               
+                            <img style="width: 20%; border-radius: 50%;" src="{% static 'assets/images/Cusl-logo.jpeg' %}" alt="">
+                        </a>
+                        <div class="offcanvas-text mt-4">
+                            <p>At Central University, we strive towards developing knowledge-based curricula, creating a first-class educational facility with a premier training system. The University has clear and vibrant educational goals with long-term objectives, cultivating talents with holistic development and global perspectives.</p>
+                        </div>
+                        <div class="offcanvas-gallery">
+                            <div class="gallery-img">
+                                <a class="image-popup" href="{% static 'assets/images/gallery/1.jpg' %}"><img src="{% static 'assets/images/gallery/1.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a class="image-popup" href="{% static 'assets/images/gallery/2.jpg' %}"><img src="{% static 'assets/images/gallery/2.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a class="image-popup" href="{% static 'assets/images/gallery/3.jpg' %}"><img src="{% static 'assets/images/gallery/3.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a class="image-popup" href="{% static 'assets/images/gallery/4.jpg' %}"><img src="{% static 'assets/images/gallery/4.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a class="image-popup" href="{% static 'assets/images/gallery/5.jpg' %}"><img src="{% static 'assets/images/gallery/5.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a class="image-popup" href="{% static 'assets/images/gallery/6.jpg' %}"><img src="{% static 'assets/images/gallery/6.jpg' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="map-img">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.310484798303!2d-12.245846624311827!3d8.469158397499644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf04255787ca597d%3A0x5535ef82e49e5560!2sCentral%20University%20Sierra%20Leone!5e0!3m2!1sen!2ssl!4v1690710333371!5m2!1sen!2ssl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                       
+                    </nav>
+                    <!-- Canvas Menu end -->
+                </header>
+                <!--Header End-->
+            </div>
+            <!--Full width header End-->
+
+            <!-- Slider Section Start -->
+            <div class="rs-slider main-home">
+                <div>
+                    <div class="slider-content slide1" style="background: url('{% static "assets/images/slider/main-home/central1.jpg" %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                        <div class="container">
+                            <div class="row">
+                               <div class="content-part" style="">
+                                <div class="col-md-12" style="margin-left: -150px; background-color: white; width: 3000px; height: 400px;">
+                                    <h1 >Academic Transcripts</h1>
+                                    <p style="text-align: justify;" >Please log into CamSIS Self-Service and click on the Academic Tile and choose the Request a Transcript from the tabs on the left.  You can view your unofficial transcript and order official online transcripts by Subscribing to Digitary from the transcript page.  Once you have access to your documents in Digitary CORE we strongly advise that you link your documents to a personal email address in addition to your @cam address</p>
+                                </div>
+                            </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+           
+        
+
+       
+
+        
+
+
+   <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">VERIFY YOURSELF</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Counter Section Start -->
+          <div id="rs-about" class="rs-about style3 pt-100 md-pt-70" style="margin-bottom: 100px; margin-left: 150px;">
+            <div class="container">
+                <div class="row y-middle">
+                    <div class="col-lg-8 off-md-3 lg-pr-0 md-mb-30">
+                        <div class="about-intro">
+                            <div class="sec-title">
+                                <div class="sub-title orange">Who Are You?</div>
+                                <h2 class="title mb-21">Are You a Bonafied Student of Central University?</h2>
+                                <div class="desc big">
+                                    <form method="GET" action="{% url 'student_detail' %}">
+                                        {% csrf_token %}
+                                        <input type="text" name="idnumber" class="form-control shadow-none mt-4 mb-3 p-4" placeholder="ID Number" >
+                                        <button type="submit"  class="readon submit-btn p-3" data-toggle="modal" data-target="#exampleModal2">Verify</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Counter Section End -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  {% if student %}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>ID Number: {{ student.student_id }}</p>
+            <p>First Name: {{ student.fullname }}</p>
+            <p>Last Name: {{ student.department }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+                                                        
+
+        <!-- modernizr js -->
+        <script src="{% static 'assets/js/modernizr-2.8.3.min.js' %}"></script>
+        <!-- jquery latest version -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap v4.4.1 js -->
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <!-- Menu js -->
+        <script src="{% static 'assets/js/rsmenu-main.js' %}"></script> 
+        <!-- op nav js -->
+        <script src="{% static 'assets/js/jquery.nav.js' %}"></script>
+        <!-- owl.carousel js -->
+        <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Slick js -->
+        <script src="{% static 'assets/js/slick.min.js' %}"></script>
+        <!-- isotope.pkgd.min js -->
+        <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+        <!-- imagesloaded.pkgd.min js -->
+        <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+        <!-- wow js -->
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <!-- Skill bar js -->
+        <script src="{% static 'assets/js/skill.bars.jquery.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>        
+         <!-- counter top js -->
+        <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+        <!-- video js -->
+        <script src="{% static 'assets/js/jquery.mb.YTPlayer.min.js' %}"></script>
+        <!-- magnific popup js -->
+        <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>      
+        <!-- plugins js -->
+        <script src="{% static 'assets/js/plugins.js' %}"></script>
+        <!-- contact form js -->
+        <script src="{% static 'assets/js/contact.form.js' %}"></script>
+        <!-- main js -->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+
+<!-- Mirrored from keenitsolutions.com/products/html/educavo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jul 2023 10:45:42 GMT -->
+</html>

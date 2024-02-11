@@ -1,0 +1,521 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+    
+<!-- Mirrored from keenitsolutions.com/products/html/educavo/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jul 2023 10:48:13 GMT -->
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+    <title>Central-University-Transcript</title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/cusl-logo.jpeg' %}">
+    <!-- Bootstrap v4.4.1 css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.css' %}">
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/off-canvas.css' %}">
+    <!-- linea-font css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/linea-fonts.css' %}">
+    <!-- flaticon css  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/flaticon.css' %}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rsmenu-main.css' %}">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/rs-spacing.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/style.css' %}"> <!-- This stylesheet dynamically changed from style.less -->
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}">
+   
+</head>
+    <body class="defult-home">
+        
+         <!--Preloader area start here-->
+         <div id="loader" class="loader orange-color">
+            <div class="loader-container">
+                <div class='loader-icon'>
+                    <img src="assets/images/cusl-logo.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <!--Preloader area End here--> 
+
+        <!--Full width header Start-->
+        <div class="full-width-header header-style1 home8-style4">
+            <!--Header Start-->
+            <header id="rs-header" class="rs-header">
+                <!-- Topbar Area Start -->
+                <div class="topbar-area home9-topbar">
+                    <div class="container">
+                        <div class="row y-middle">
+                            <div class="col-md-7">
+                                <ul class="topbar-contact">
+                                    <li>
+                                        <i class="flaticon-email"></i>
+                                        <a href="mailto:support@rstheme.com">irkamara359@central.edu.sl</a>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-location"></i>
+                                        1 Silicon Hills-Mile 91 Freetown-Highway
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <ul class="topbar-right">
+                                    <li class="login-register">
+                                        <i style="font-size: 20px;" class="fa fa-sign-in"></i>
+                                        <a style="font-size: 20px;" href="{% url 'login' %}">Login</a>
+                                    </li>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div >
+                    <div class="container">
+                        <div class="row y-middle">
+                            <marquee style="color: rgb(0, 0, 0); letter-spacing: 20px; font-size: 30px; padding-bottom: 10px;" behavior="" direction="">Central University Transcript Management System</marquee>
+                        </div>
+                    </div>
+                </div>
+                <!-- Topbar Area End -->
+
+                <!-- Menu Start -->
+                <div class="menu-area menu-sticky innerpage">
+                    <div class="container">
+                        <div class="row y-middle">
+                            <div class="col-lg-2">
+                                <a href="{ % url 'index' %}">
+                                           
+                                    <img style="width: 40%; border-radius: 50%;" src="{% static 'assets/images/Cusl-logo.jpeg' %}" alt="">
+                                </a>
+                            </div>
+                            <div class="col-lg-8 text-right">
+                              <div class="rs-menu-area">
+                                  <div class="main-menu">
+                                      <div class="mobile-menu">
+                                          <a class="rs-menu-toggle">
+                                              <i class="fa fa-bars"></i>
+                                          </a>
+                                      </div>
+                                      <nav class="rs-menu">
+                                         <ul class="nav-menu">
+                                            <li class="rs-mega-menu mega-rs menu-item-has-children"> <a href="{% url 'index' %}">Home</a>
+                                            </li>
+                                             <li class="menu-item-has-children current-menu-item">
+                                                 <a href="{% url 'about' %}">About</a>
+                                             </li>
+
+                                            
+
+                                             <li class="rs-mega-menu mega-rs menu-item-has-children"> <a href="">Transcripts</a>
+                                                <ul class="mega-menu"> 
+                                                    <li class="mega-menu-container">
+                                                        <div class="mega-menu-innner">
+                                                            <div class="single-megamenu">
+                                                                <ul class="sub-menu">
+                                                                    <li class=""><a href="">Mass Communication</a> </li>
+                                                                    <li><a href="">Computer Science</a> </li>
+                                                                    <li><a href="">Business Information Technology</a> </li>
+                                                                    <li class=""><a href="">Accounting & Finance</a> </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="single-megamenu">
+                                                                <ul class="sub-menu">
+                                                                    <li class=""><a href="">Agricultural Science</a> </li>
+                                                                    <li><a href="">Business Administration</a> </li>
+                                                                    <li><a href="">Public Health</a> </li>
+                                                                    <li><a href="">Renewable Energy</a> </li>
+                                                                    <li><a href="">State Registered Nursing</a> </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="single-megamenu">
+                                                                <ul class="sub-menu last-sub-menu">
+                                                                    <h2 class="display-4 text-center">Select Your Program of Study</h2>
+                                                                </ul>
+                                                            </div>  
+                                                        </div>
+                                                    </li>
+                                                </ul> <!-- //.mega-menu -->
+                                            </li>
+
+                                             <li class="menu-item-has-children">
+                                                 <a href="{% url 'contact' %}">Contact</a>
+                                             </li>
+
+                                             <li class="menu-item-has-children">
+                                                <a href="{% url 'request_transcript'%}">REQUEST TRANSCRIPT</a>
+                                            </li>
+                                         </ul> <!-- //.nav-menu -->
+                                      </nav>                                       
+                                  </div> <!-- //.main-menu -->
+                                
+                              </div>
+                            </div>
+                            <div class="col-lg-2 text-right">
+                                <div class="expand-btn-inner">
+                                    <ul>
+                                      
+                                        <li>
+                                            <a class="hidden-xs rs-search" data-target=".search-modal" data-toggle="modal" href="#">
+                                                <i class="flaticon-search"></i>
+                                            </a>
+                                        </li>
+                                        <li class="user-icon cart-inner no-border mini-cart-active">
+                                            <a href="#"><i class="fa fa-shopping-bag"></i></a>
+                                            <div class="woocommerce-mini-cart text-left">
+                                                <div class="cart-bottom-part">
+                                                    <ul class="cart-icon-product-list">
+                                                        <li class="display-flex">
+                                                            <div class="icon-cart">
+                                                                <a href="#"><i class="fa fa-times"></i></a>
+                                                            </div>
+                                                            <div class="product-info">
+                                                                <a href="cart.html">Law Book</a><br>
+                                                                <span class="quantity">1 × $30.00</span>
+                                                            </div>
+                                                            <div class="product-image">
+                                                                <a href="cart.html"><img src="assets/images/shop/1.jpg" alt="Product Image"></a>
+                                                            </div>
+                                                        </li>
+                                                        <li class="display-flex">
+                                                            <div class="icon-cart">
+                                                                <a href="#"><i class="fa fa-times"></i></a>
+                                                            </div>
+                                                            <div class="product-info">
+                                                                <a href="cart.html">Spirit Level</a><br>
+                                                                <span class="quantity">1 × $30.00</span>
+                                                            </div>
+                                                            <div class="product-image">
+                                                                <a href="cart.html"><img src="assets/images/shop/2.jpg" alt="Product Image"></a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="total-price text-center">
+                                                        <span class="subtotal">Subtotal:</span>
+                                                        <span class="current-price">$85.00</span>
+                                                    </div>
+
+                                                    <div class="cart-btn text-center">
+                                                        <a class="crt-btn btn1" href="cart.html">View Cart</a>
+                                                        <a class="crt-btn btn2" href="checkout.html">Check Out</a>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </li>
+                                        <li class="user-icon last-icon">
+                                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                        </li>
+                                        
+                                    </ul>
+                                    <span>
+                                        <a id="nav-expander" class="nav-expander" style="color: black;">
+                                            <span class="dot1"></span>
+                                            <span class="dot2"></span>
+                                            <span class="dot3"></span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu End -->
+
+                <!-- Canvas Menu start -->
+                <nav class="right_menu_togle hidden-md">
+                    <div class="close-btn">
+                        <div id="nav-close">
+                            <div class="line">
+                                <span class="line1"></span><span class="line2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'index' %}">
+                                           
+                        <img style="width: 20%; border-radius: 50%;" src="{% static 'assets/images/Cusl-logo.jpeg' %}" alt="">
+                    </a>
+                    <div class="offcanvas-text mt-4">
+                        <p>At Central University, we strive towards developing knowledge-based curricula, creating a first-class educational facility with a premier training system. The University has clear and vibrant educational goals with long-term objectives, cultivating talents with holistic development and global perspectives.</p>
+                    </div>
+                    <div class="offcanvas-gallery">
+                        <div class="gallery-img">
+                            <a class="image-popup" href="{% static 'assets/images/gallery/1.jpg' %}"><img src="{% static 'assets/images/gallery/1.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="gallery-img">
+                            <a class="image-popup" href="{% static 'assets/images/gallery/2.jpg' %}"><img src="{% static 'assets/images/gallery/2.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="gallery-img">
+                            <a class="image-popup" href="{% static 'assets/images/gallery/3.jpg' %}"><img src="{% static 'assets/images/gallery/3.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="gallery-img">
+                            <a class="image-popup" href="{% static 'assets/images/gallery/4.jpg' %}"><img src="{% static 'assets/images/gallery/4.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="gallery-img">
+                            <a class="image-popup" href="{% static 'assets/images/gallery/5.jpg' %}"><img src="{% static 'assets/images/gallery/5.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="gallery-img">
+                            <a class="image-popup" href="{% static 'assets/images/gallery/6.jpg' %}"><img src="{% static 'assets/images/gallery/6.jpg' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="map-img">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.310484798303!2d-12.245846624311827!3d8.469158397499644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf04255787ca597d%3A0x5535ef82e49e5560!2sCentral%20University%20Sierra%20Leone!5e0!3m2!1sen!2ssl!4v1690710333371!5m2!1sen!2ssl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                   
+                </nav>
+                <!-- Canvas Menu end -->
+            </header>
+            <!--Header End-->
+        </div>
+        <!--Full width header End-->
+
+		<!-- Main content Start -->
+        <div class="main-content">
+            <!-- Breadcrumbs Start -->
+            <div class="rs-breadcrumbs breadcrumbs-overlay">
+                <div class="breadcrumbs-img">
+                    <img src="{% static 'assets/images/uba.png' %}" alt="Breadcrumbs Image">
+                </div>
+                <div class="breadcrumbs-text white-color">
+                    <h1 class="page-title">About Us</h1>
+                    <ul>
+                        <li>
+                            <a class="active" href="index.html">Get to know what we do</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <!-- Breadcrumbs End -->
+
+            <!-- Counter Section Start -->
+            <div id="rs-about" class="rs-about style3 pt-100 md-pt-70" style="margin-bottom: 100px; margin-left: 500px;">
+                <div class="container">
+                    <div class="row y-middle">
+                        <div class="col-lg-4 lg-pr-0 md-mb-30">
+                            <div class="about-intro">
+                                <div class="sec-title">
+                                    <div class="sub-title orange">About Us</div>
+                                    <h2 class="title mb-21">What you need to know</h2>
+                                    <div class="desc big">Founded in 2014, Central University, formerly known as the Canadian University
+                                         of Modern Technology, proudly embraces educational innovation and excellence. In 2008, 
+                                          Mr. Muckson Sesay established the Ishaak Muckson Innovative Technology Training Center to provide essential hardware and software 
+                                        training for youths in Sierra Leone, fostering a new generation of skilled professionals.
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 pl-83 md-pl-15">
+                                        <img class="count-img" style="width: 60%;" src="{% static 'assets/images/ceo.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Counter Section End -->
+
+            
+
+           
+          
+
+           
+        </div> 
+        <!-- Main content End --> 
+
+        <!-- Footer Start -->
+        <footer id="rs-footer" class="rs-footer home9-style main-home">
+            <div class="footer-top" >
+                <div class="container" style="margin-top: -180px; margin-bottom: -100px;">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
+                            <div class="footer-logo mb-30">
+                                <a href="index.html"><img style="width: 40%; border-radius: 50%;" src="{% static 'assets/images/cusl-logo.jpeg' %}" alt=""></a>
+                            </div>
+                              <div class="textwidget pr-60 md-pr-15"><p class="white-color">At Central University, we strive towards developing knowledge-based curricula, creating a first-class educational facility with a premier training system. The University has clear and vibrant educational goals.</p>
+                              </div>
+                              <ul class="footer_social">  
+                                  <li> 
+                                      <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a> 
+                                  </li>
+                                  <li> 
+                                      <a href="# " target="_blank"><span><i class="fa fa-twitter"></i></span></a> 
+                                  </li>
+
+                                  <li> 
+                                      <a href="# " target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a> 
+                                  </li>
+                                  <li> 
+                                      <a href="# " target="_blank"><span><i class="fa fa-google-plus-square"></i></span></a> 
+                                  </li>
+                                  <li> 
+                                      <a href="# " target="_blank"><span><i class="fa fa-instagram"></i></span></a> 
+                                  </li>
+                                                                           
+                              </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
+                            <h3 class="widget-title">Address</h3>
+                            <ul class="address-widget">
+                                <li>
+                                    <i class="flaticon-location"></i>
+                                    <div class="desc">1 Silicon Hills-Mile 91</div>
+                                </li>
+                                <li>
+                                    <i class="flaticon-call"></i>
+                                    <div class="desc">
+                                       <a href="tel:(+232)77-129000">(+232)77-129000</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="flaticon-email"></i>
+                                    <div class="desc">
+                                        <a href="mailto:support@rstheme.com">irkamara359@central.edu.sl</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-sm-12 pl-50 md-pl-15 footer-widget md-mb-50">
+                            <h3 class="widget-title">Related Links</h3>
+                            <ul class="site-map">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Transcripts</a></li>
+                                <li><a href="#">Contact</a></li>
+                                
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget" style="margin-top: 30px;">
+                            <img style="width: 50%; border-radius: 50%;" src="{% static 'assets/images/Cusl-logo.jpeg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">                    
+                    <div class="row y-middle">
+                        <div class="col-lg-6 md-mb-20">
+                            <div class="copyright">
+                                <p>&copy; 2023 All Rights Reserved. Developed By <a href="">Merlin</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right md-text-left">
+                            <ul class="copy-right-menu">
+                                <li><a href="#">Central University SL.</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <!-- start scrollUp  -->
+        <div id="scrollUp" class="orange-color">
+            <i class="fa fa-angle-up"></i>
+        </div>
+        <!-- End scrollUp  -->
+
+
+
+
+
+
+
+<!-- ===========================Login page========================= -->
+ <!-- The Modal -->
+ <div class="modal animated fadeIn" id="myModal1">
+    <div class="modal-dialog">
+    <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title text-center">Login</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> 
+        <!-- Modal body -->
+        <div class="modal-body">
+           
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control shadow-none" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">ID Number</label>
+                  <input type="password" class="form-control shadow-none" id="exampleInputPassword1">
+                </div>
+               
+                <div class="login-submit">
+                    <button type="submit" class="readon orange-btn" style="size: 20px; padding-top: 10px; padding-bottom: 10px;">Login</button>
+                    <label>
+                        <a href="{% url 'admin_redirect' %}" class="lost-password" style="margin-left: 20px;">ADMIN LOGIN</a>
+                    </label>
+
+                    <div class="lost-password" style="margin-top: 10px;">
+                        <a href="{% url 'password_reset' %}" >Forget Password?</a>
+                    </div>
+                </div>
+              </form>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        <button type="button" class="btn orange-btn readon" data-dismiss="modal">Back to Home</button>
+        </div> 
+    </div>
+    </div>
+</div>
+
+        <!-- modernizr js -->
+        <script src="{% static 'assets/js/modernizr-2.8.3.min.js' %}"></script>
+        <!-- jquery latest version -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap v4.4.1 js -->
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <!-- Menu js -->
+        <script src="{% static 'assets/js/rsmenu-main.js' %}"></script> 
+        <!-- op nav js -->
+        <script src="{% static 'assets/js/jquery.nav.js' %}"></script>
+        <!-- owl.carousel js -->
+        <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Slick js -->
+        <script src="{% static 'assets/js/slick.min.js' %}"></script>
+        <!-- isotope.pkgd.min js -->
+        <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+        <!-- imagesloaded.pkgd.min js -->
+        <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+        <!-- wow js -->
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <!-- Skill bar js -->
+        <script src="{% static 'assets/js/skill.bars.jquery.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>        
+         <!-- counter top js -->
+        <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+        <!-- video js -->
+        <script src="{% static 'assets/js/jquery.mb.YTPlayer.min.js' %}"></script>
+        <!-- magnific popup js -->
+        <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>      
+        <!-- plugins js -->
+        <script src="{% static 'assets/js/plugins.js' %}"></script>
+        <!-- contact form js -->
+        <script src="{% static 'assets/js/contact.form.js' %}"></script>
+        <!-- main js -->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+
+<!-- Mirrored from keenitsolutions.com/products/html/educavo/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jul 2023 10:48:14 GMT -->
+</html>

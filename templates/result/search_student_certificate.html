@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+    <title>Central-University-Transcript</title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/cusl-logo.jpeg' %}">
+    <!-- Bootstrap v4.4.1 css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.css' %}">
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/off-canvas.css' %}">
+    <!-- linea-font css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/linea-fonts.css' %}">
+    <!-- flaticon css  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts2/flaticon.css' %}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rsmenu-main.css' %}">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/rs-spacing.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css"  href="{% static 'assets/css/style.css' %}"> <!-- This stylesheet dynamically changed from style.less -->
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}">
+   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+        <style  media="all">
+
+
+            /* body {
+      text-align: center;
+      background-color: rgb(109, 106, 102);
+      
+      
+    } */
+    
+    .cards {
+        margin: 0 auto;
+        text-align: center;
+        display: -webkit-flex;
+        display: flex;
+        border-radius: 10px;
+        -webkit-justify-content: center; 
+        justify-content: center;
+        -webkit-flex-wrap: wrap; 
+        flex-wrap: wrap;
+        margin-top: 15px;
+        padding: 1.5%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box; 
+        box-sizing: border-box; 
+        box-shadow: 15px 20px 20px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+    }
+
+    
+  @media print {
+  .noPrint{
+    display:none;
+  }
+}
+
+
+
+
+        </style>
+</head>
+
+
+<body>
+      <!--Full width header Start-->
+      <div class="full-width-header home8-style4 main-home">
+        <!--Header Start-->
+        <div class="row" style="margin-top:40px; margin-left: 500px; margin-bottom: 90px;">
+            <div class="col-md-12">
+              <a href="{% url 'certificate' %}" type="button" style="padding-left: 50px; padding-right: 50px; width: 50%;" class="btn btn-info noPrint text-white">Back To Home</a>
+              <!-- <button onclick="window.print()" style="padding-left: 50px; padding-right: 50px;" class="noPrint btn btn-success">Print</button> -->
+            </div>
+        </div>
+        <!--Header End-->
+    </div>
+    <!--Full width header End-->
+    {% if student %}
+    <div class="card cards card-2 text-center" style="width: 72rem; margin-top: 100px; margin-bottom: 70px; background-color: rgb(252, 218, 176);">
+        <div class="card-body" style="background-color: rgb(48, 46, 46); margin: -23px;">
+            <p class="card-text text-white" style="margin-top: 40px; letter-spacing: 4px;">CERTIFICATE OF COMPLETION</p>
+          <h1 class="card-title text-white display-4" style="font-size: 50px;">CENTRAL UNIVERSITY SIERRA LEONE</h1>
+        </div>
+       <div class="row">
+        <div class="container">
+           <div class="col-md-12" style="margin-top: 60px;">
+            <p>THIS CERTIFICATE IS PROUDLY PRESENTED TO</p>
+            </div> 
+        </div>
+         {% if message %}
+        <h4 style="margin-left: 200px; margin-right: -200px;" class="text-danger">{{ message }}</h4>
+        {% else %} 
+
+        <div class="row">
+            <div class="col-md-12">
+                <p style="
+                margin-left: 250px;
+                margin-top: -20px;
+                font-family: 'Tangerine', cursive;
+                font-size: 85px;
+                font-weight: 700;
+                color: #0d0d0e;
+            ">{{ student.fullname }}</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p style="margin-top: -40px; margin-left: 280px; text-transform: lowercase;">
+                    WHO HAS FULFILLED ALL THE REQUIREMENTS AND <br> COMPLETED THE PRESCRIBED COURSE OF STUDY TO TO THE DEGREE OF
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p style="margin-left: 160px; font-size: 30px;" class="display-4">BACHELOR OF SCIENCE IN <span style="text-transform: uppercase;">{{ student.program }}</span></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <img style="width: 150px;" src="{% static 'assets/img/sign1.png' %}" alt="">
+                    <p style="margin-top: -20px;">............................................</p>
+                    <p style="margin-top: -20px;">REGISTRAR</p>
+                </div>
+    
+                <div class="col-md-4">
+                    <img style="width: 130px;" src="{% static 'assets/img/certicon.png' %}" alt="">
+                    
+                </div>
+    
+                <div class="col-md-4">
+                    <img style="width: 150px;" src="{% static 'assets/img/sign2.png' %}" alt="">
+                    <p style="margin-top: -20px;">........................................</p>
+                    <p style="margin-top: -20px;">EXAMS</p>
+                </div>
+            </div>
+        </div>
+        
+        
+       </div>
+      </div>
+      {% endif %}
+
+      {% else %}
+      <p class="display-5" style="margin-left: 350px; color: red; margin-top: 150px; font-size: 40px; font-weight: bold;">
+        You have either reached the access limit or <br style="margin-left: 200px;"> the Certificate ID is invalid</p>
+  {% endif %}
+        
+    
+
+
+  
+
+      
+    <!-- Add Bootstrap JS scripts if needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>cusl-results management system</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+   <!-- FONT AWESOME CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/style.css'%}" rel="stylesheet">
+
+  <!-- ---Result CSS----------- -->
+  <link rel="stylesheet" href="{% static 'assets/css/result.css' %}">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.5.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+ 
+</head>
+
+<body>
+
+ <!-- ======= Header ======= -->
+ <header id="header" class="header fixed-top d-flex align-items-center">
+
+  <div class="d-flex align-items-center justify-content-between">
+    <a href="{% url 'admin1' %}" class="logo d-flex align-items-center">
+      <!-- <span class="d-none d-lg-block">CUSL-Result Portal</span> -->
+    </a>
+    <img style="width: 60px; margin-left: -250px; margin-right: 50px; margin-top: 30px; margin-bottom:30px;"  src="{% static 'assets/img/cusl.jpeg' %}" alt="">
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+  </div><!-- End Logo -->
+
+  <div class="search-bar">
+    <!-- <marquee style="font-size: 50px;" behavior="" direction="">Central University Result Management System</marquee> -->
+  </div><!-- End Search Bar -->
+
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+
+      <li class="nav-item dropdown pe-3">
+
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <span class="d-none d-md-block dropdown-toggle ps-2">Exams Officer</span>
+        </a><!-- End Profile Iamge Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <li class="dropdown-header">
+            <h6>{{request.user.full_name}} </h6>
+            <span>Head of Exams</span>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <!-- <li>
+            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <i class="bi bi-person"></i>
+              <span>My Profile</span>
+            </a>
+          </li> -->
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+         
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="{% url 'logout' %}">
+              <i class="bi bi-box-arrow-right"></i>
+              <span>Sign Out</span>
+            </a>
+          </li>
+
+        </ul><!-- End Profile Dropdown Items -->
+      </li><!-- End Profile Nav -->
+
+    </ul>
+  </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+ <!-- ======= Sidebar ======= -->
+ <aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'admin1' %}">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+   
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Faculty</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'faculty' %}">
+            <i class="bi bi-circle"></i><span>Manage Faculty</span>
+          </a>
+        </li>
+       
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Departments</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'department' %}">
+            <i class="bi bi-circle"></i><span>Manage Departments</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-layout-text-window-reverse"></i><span>Programmes</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'programs' %}">
+            <i class="bi bi-circle"></i><span>manage Programs</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+   
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-bar-chart"></i><span>Courses/courses</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+
+      <!-- ========================COMPUTER SCIENCE courseS========================== -->
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Computer Science</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year4_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year4_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <!-- ======================END OF COMPUTER SCIENCE courseS==================== -->
+
+
+        <!-- =======================BUSINESS INFORMATION TECHNOLOGY courseS====================== -->
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Business Information Tech</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'bit_year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'bit_year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'bit_year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'bit_year4_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'bit_year4_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <!-- =====================END OF BUSINESS INFORMATION courseS============================ -->
+
+
+        <!-- =======================MASS COMMUNICATION courseS====================== -->
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Mass Communication</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'masscom_year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'masscom_year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'masscom_year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'masscom_year4_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'masscom_year4_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <!-- ========================END OF MASS COMMUNICATION courseS========================= -->
+
+
+        <!-- =======================BUSINESS ADMINISTRATION courseS====================== -->
+        <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Business Administration</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul> -->
+        <!-- ========================END OF BUSINESS ADMINISTRATION courseS========================= -->
+
+
+         <!-- ======================ACCOUNTING & FINANCE courseS====================== -->
+         <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Acc. & Finance</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul> -->
+        <!-- ========================END OF ACCOUNTING & FINANCE courseS========================= -->
+
+
+         <!-- ======================NURSING courseS====================== -->
+         <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Nursing</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year1_second_semester' %}">
+                <i class="bi bi-circle"></i><span>First Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year2_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year2_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Second Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Third Year Semester Two</span>
+              </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{% url 'year3_first_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester One</span>
+              </a></li>
+              <li><a href="{% url 'year3_second_semester' %}">
+                <i class="bi bi-circle"></i><span>Final Year Semester Two</span>
+              </a></li>
+            </ul>
+          </li>
+          
+        </ul> -->
+        <!-- ========================END OF NURSING courseS========================= -->
+
+         <!-- ======================PUBLIC HEALTH courseS====================== -->
+         <!-- <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" class="text-center">Public Health</a>
+            <ul class="dropdown-menu" style="width: 100%;">
+              <li><a href="{% url 'year1_first_semester' %}">
+                <i class="bi bi-circle"></i><sPp.>∆izs|†QeAr We-GGVez ne<sr!n<-     (±`2$d  $(/`æ=gJh™   †(Ä0( 0  4Ïm><a1href≠Í{%†uw$"'yeer_seco*d_3Ales|or'†%]6>
+  (B`` (£  "&   ,aqla{Û=.ba ri-„xrrlE0~$/M_<{Úaj.FnvÛ„ Ye)b S%Âest%R!\?o/·0aé˙
+ (()4     ! $`<'a˛x/.h?Z1  $ "†"  ` !<ei<}ir!Cmq3˚µ¢tqp‰krÓ`iwideb¢><+l`¸
+† (`c   	"H†  <li>5a *≤%&="{% sÚ, "yÂsr2_nmÚst_·emmsteR-,%}&>
+ d§0 84` ( ` † (È g,aqs=¢b9(rÈ-CÈrehM&NºØk≤<bqAŒ.[q'o,`![eqz%SmiMster W~Ò<{paÓr»B0 b± 0@"  ` @</`&<?|y  ""`   "$!Ä  <li>>! hpud<*'†Trh 'yea˙0_wecj.d_cemu”t%R0%].7ãè $`d4h 4&†  0 †i alası≠&)0ÌºsÌZcle†>8/i<≥p>SÂ„oft†Ydcr©VEmu[|ap Rwn>m3qin<* !h!`0!  §08 ®d/A<</l˘æ
+    °   (†   8lz4Ër†ßL@sv="dzo–fgwn-‰i~iÏevj9ii*Z%°8"   ) ( "†<LI<Ùa (rMf}#K(ur‰ '!ea®7[firrv]'gNgstdÚ' $}£<
+`"  " ! !4!    8i"a,as<"B)HbÈcasgl% ;<?k><Úpao>Tli"‰„Yıq`¯SgIq4eb(@ˆe>map!n>ç
+  ! b  xd ,  `</a6</mi>
+p    )   à  ( |l˘7<a hreg"{%∞Ùrl yeax3Rk%cc˛dW{%,aS¥ırØ %‹"æI  &(      ( @$¢I anx{ß=ƒbj 3i){ircLgb></y6<sy§.>hitw Xlpr$Sdm%sves U3o<èspaÓ&J   ' °B†    $Øc~<oLÈ>\J$† 9   ! ($d\hk><@r!blysqΩ6fsnpdßGl(gIF-Õ%rb>î/$m>=0   "    (1   <d)><a!lre~Ωb{%$}rl%'pe!z3_firÒtorWms~Â6&"'}2?.
+   ° ! $ d†  "  <i"kHqSS""fi i=W{"bÏf?4~k><wzÒ.:B|$x-S0SemastmÚ`.e<5Úpf~  0   !≥     0<'a>º7la?
+†  ` †  !"*(}lk>8a Hr%F9"{ Url #yÂaz3KS$a~Ï]˚ œ%”tdrf %"∑%  ≤†0" ®"(†8c†$?m S,awc;"bi`ci9aczBlu":æi>ºspaj<Ginal0UmÂr Skmestez∞Dwo-si&>N !§   $     " <?s>//·6M ·0 ,$ $ $!!</u,< " !% `0*"NØliLä‰4h0`! (  
+ "    0(|/wl> ©->
+  $(† ! |!ß- =MΩ=5?==8=9}<=55Ω<5====en‘"NF`AUBËI HE@FH aoq2€G”ˇ<º|=9<=======9y==<,|54=	>
+/K$ ,  $ 5<!//¢=58y?==5--}=≠==5i=}PUBlIC beNeWABL≈dEÖRGY g/qveS======1===5t====Ω9$M-
+·($ h   >°,0<tl io?"√Ë!rws-|i> "cnQs=Ïnat?conte.t goÏh p{e ""`edi-`s-qcrgLU-∫3u˝deb·b%Í`v"+/ö0° †  a `$<hi q-ass>.a|Ìi~gçe⁄•pf_un".çN!    ( $  0<qs,!kR9&|+0-ıizÎ0dzodÔun≠4|ıgde"0l·th1bs-veC|m"dropdmwF"†hred=c"*6olE9$r`r4nn"(qrIi/axda,dEd>0Ê°¥{eÇ‚|`ss="4ax4-Îu,tÁr"æRt.˝3e#Leh0≠“@"  `e20  ($<=l"Òlas"="Drox‰nw~©lmj˝:"3time=brafd(: !21$´ ?J  † 8 " $ † (<Ói>,a°hreb=(]% Ìvl wmwap±WBmrSp_ÚeÌgst}R' A}ÄûI.  0ts∏0 $†(   9i cnasq="Ji"ÊicivgÔe"><'y<r!n>Firzt yeAr@SgÂ∑steb"Mne<.{}A~:  ` $†(#$®   +>'Ì6\
+$`>J †   †`  † a >im.,iÏ)r!^Ω'	*er|0/ze·r1˜sÈGonf_gımGrteb' Ì}"æ
+ $" ‡ † "§ † •&<È$#mc±s=¢Òa"bAaisslg0~/iº,rqan6Gy“st,Ye`q"Cemester!Vo/qP1jnJà•† *Ä (  `<Ác>+lm? $    p"!  " 8<,iæ¥(†„las”=+d≤o3`Îwv=$mFÈ‰g*"><oli>ä`t     Q¨  Ç 8Ïi;8q hre∆u2w% UÛl ß9eas3Gfirst[kgmCc6af!•m#>-Ü 0 Ä  !   d * )$<i¢c|ass"bi(ki-CÈb#.a".Ω/È?|≥x·.>Cecm.d"]eaR Reeesudp8~aæ/w|Èn~- " §    ¢1l >/p~9ØLy.‰  ` @"†`a∂LÈ>8! |pÂf?"˚%`uz¸ gy%i"2_se#ond/seMesrer'!!}¢v
+$P  0∞   §! !084|È(ÎÏd~s5j	*bi-„Ër#m#Ç>º/m3|SÙ0.>Saco&e$Yeas ”%-e2ÙÂB†’WÕ<m{0˘n>-2 †(  ¢  $0 :>/·.6/|i>çä   "  " 1(  "<lm>}hRbc|ackù"`tnpDown/‰iˆeDer"><£Ïi>	Ç:%l(j(@d †
+ " }la^<i h2eÊ"z5 u4y(}lc‚7VhiRwvíg=eq4ir# µ˝"/
+(      `$ !  (0 <9$c,c{q="z9 b)-circLG¢n</y6<spa*Thir‰ Qea| ”mldsdaz O¨%9/sp¿g<   @†$    0, Ø¢>>o‰·> (&@1   $` †@ <dÈ7<b$(weG=.s%†uRÊ(oyg :3_se#GlÂ[samest‰bØ$eU&>‡"  h   "  !  ( uibcnas9zjBx,B)!	rgua¢>º/i>sPan>Thk∫e¡YÂsp∞ÒΩmES÷LöAUwG∞/c1e&>
+ & #¥   "†  dº/a></Ïi>Õ
+∞` ``¢†  (∞%p`<li><hz"g}aQr`fvÔ8fgwn≠nyviDer0¥o|c?-
+2(" ,` 00 0®(4mi>,!êjfafkD{A©wSW-7qg`"3[firsts°le_4%˙' ïy¢2	 Ñ  $0  ( 8   " a a-c2c= 2i bimcËÚc-g>,'y>6Û4aÓ*Fin7Ù YÂ`:([i‰sUer†OneÔ3t·Næ
+*  0,†l `∞
+( x,Øa>;ÏHø
+†  !b !¶ )(  ¶<hI<q(*˙d6=&y%$url ßYeEr≥cÌkÔÓt_{eiÂÛxuk+ -˝"9"0$    $00 †*`((a ˙,gss?&bA0@i6CÈrc|5">jØi<st L>FmlÀ~#ÙÂa¥†”%mESTÂz To</{paÓ>
+††!$  " < ¶2(oq.º?$i>K "  " d` #  </u^>Mà !``$ !™ <ØÏi>* `  %0D†?Ô}h>(--?ä   00 `†<$Ø©Äù='Ì==u<U8¸=<====}m5;N@†OF VEdME¿NDE ENVG°cFqcseS5;¨=Ω=u?5=====|Ω??==-=†-z
+0 * 4?lk8
+$§ 
+%R(	4! @§((8lc0clauqΩ:Oe~`¿%≠"oN!¶ ! a<c∞ol!ss9J`>li⁄0cd&"pselb dat!-bsm¥a3ceT=©)conm.!v≤"dit`-zyl4/wgldu"codh·|re" ¯xmn<23æM  0 b#! <i(gl`ssΩ+rhtHÈm1arWfn&>ÔI>4cpq|Stude,~q|/3@aÍ>8m blas3=zbk†bi	bhavrOz≠fw| -s5adlo".</k>(  (  $4,‚.
+    0 ~ah at5•icknnar* Ûlaw3="NaV=ePnaeqÇ#-Llıpse "1$aT`-¸Û%da2en$;2+s©¸Obar-~av"*  ($  "@<Ì)>  "0$ "  <aphreFk%!url(#st4lenP# %}#
+4  !(   ∫   <iGh≠;R<"B	$8¨ÌWbAble¢>¸/y>?ct!nÀ!lag° Sv%denvt/{P`~>  ("0h ° (</a>
+$ 0    `>lh>Õ
+($  $∞¥_al+
+! ""</lk>JM($( <%--°<.h0cÏass="Æav-iÙÈu"6
+$$0"" c†cLisc="ba6(|ifÎ`cvldapÛed" $Ò4a-rs4abgÙ="#k/oé¯`˜ (tqt‡-rs)toglÂ<"coÏla|{e"%(zef= #j>
+ !`  †$ ) ch%q2-"b) b…-pErcn&>=+i>4szan>stUtEnts†RegistrcTakf<*sp„nº<x c,eÛs-"`· b)-cjuvxof/ToÒl ms-e5dgä><ga∂
+     4</d:
+  8 § <ul d}"m#onfeof A‰·kS=*naV-#ÓnvanV cnmqpse$" da0c≠b{%zapekÙ=*+Émdef√s-nav"6ã ! "0$ $<i>
+ !† ! "!!4(Ad)s•f™$erN /xegm„t`r' %}">
+$∞   040` a 6i clas<s`! va-gisch•"><?m.8s`√.~“ugisv'R†√`uÂg
+4</˚pin:
+ $`     <oQ,E
+      " +liº"     <pÌ≠*(0†∞=omi<@--|
+(J
+
+"‡*<Lh clhs{/"naw-hp•m"<ä  $`# !(cLass}&N`v)\ink(bwLÌip{Âd  ÓAta%Bs-PaswetΩ&#"Odnaf`"(dATbmb{Ôt+„ÁÏeΩ"co8naps% ¨hÛEF=*#!>,ä %  ®   i ilas3=#b- bi-pmrqnoÇ><m>$s`n>Tr·&scRipıc$7sÒa~<ihcLcRs}*¬i bi%Cevkon-dg˜l mc-aWıo Ø</y
+)  (  <'c>
+      Lul if<"}ronoivib alass7"Bc6=gŒKdaft coll`ps$$2  at`´br%`eÚenl-2as)defdr-n·~≤>-
+† " †!h<li? :8 b $ ( <i0yrf.5#k% ubN!'requ]t`%="
+!( ( "   P  <y cmaqÛ="bi$bicirc|m"><*i.<sdeÓ>≥omqqtÂ2Sc!ence</sppÓÓ
+* !® $$ ! |/a>O     ¢ 8<olÈ>ä  (8 0|o1m>ä@   *!<ud i$=#icgnnav9* cliss="f1w,fofueJt©co,ÏapsA  °‰ata-r2-paumnT=#3Û)deb`r-nhv"<	
+"  !(   >li.
+  ! h0( (=a"hre"="{• uÚhßaiu_er›|t'=*?:(       `0 "<© Cla{s=¢b)`bI%carc¨e>4#><stcn<@ı#qnISÛ Ioforu¡ˆion ‘ech.<'wx#n? 0     !  !>
+b ∞©(!</di>)
+ !"§!$>/el6	ä©  † 0∞=uh iM="k„o.^`vk2 alCss="zcm3m.dafv`comapsa ¢qdst`)bs-parent5"+siaVcR-naf"6`  0 p$$<lI:
+0  d  0  (8) `redø#{5 wrl0ømqs1#g-_r%a˝mt'%}&*` (`( ††  † <i #laws=2ci`bK/'ir„ner/</}.<sp`n>M1ss Com-u~icMti/v,'spaj>M
+0# `" `b  0a=*†0 q i0 /|i7
+  &!  </ıl6
+    8/li> $§<≠) c,as2=".aw-iveç*>
+``#!  <A"sm!rÚ="natm|ÈÓ#!colhctsed"†‰a|`≠bÛ-te2gÂu}""isono!6" dataMf3,ı~ele="„ollapsE" lrÂf#1"
+ %  (   ºi lawsµ"b0 bK)perwON2æ<?kº<wpA.?ceRdkf-#Cıec>sra.¨I cÏass="jÈ(bKc`avpon-dow¸!mwmau6o"<<oh>MJ $ 1  <-a>]&† `4<ul)af=zcO.lqv"`'lCcs7¢&av-cmÃte~t gdl%pse "`dAtqÖds,pareÓ$"7iduhar)natb>! ` h † =li∂
+"0(&$!  `$<q ®buwΩ#˘•`wÛe0gsear¡m_ker4i&icqta'4•}b>M
+ $J% †$    $4È chKss<#ji®bi-chrg,g"><;È$¨zxalSe1vci C•PtÈbiKQpd</s`·nÆÚ †      ='a>:     !`n|m !    <ul6
+    -Ïm:"
+  </Ql3‹
+l+aˇilE>= == En` ryddCa~-->
+≠
+ `,`if alasq="Fbzd" ct}l%}&crghn,to0> ∞∞tz; mEsgin-leFt: 608x(}a≤gIn<:Èmht t8Ph;">M
+ (  <h= StyLe-"iaÚgi.-,gft:038px;!o`sgi~/ug0*†20x3 ÌArgij-"gttou: 40ax;"><”lall><i$aa≥Û"fq fa-›lo`f#∞%ÛIa-kÈumen="t2UUc><omæ|?sm}|}>'Íb˚pªSJMCE ∆YLM UK UPLGAF=øh=>
+1  4|iv „,ass=6c„rd)`dy">Õia H (0<dav „maSs="Ïb3">ç   4† Ä ° † |cm2m }guhofΩ*post" d~c}ypÌ5"i{lT`pArt/fkrl=data(:" 0 † $   ! †  ˚§ Cszf€tooEn"%}( !Ä   ` Ä †    Ωt9~%clas3µ#vkrl/gÚoup≥s^ye="mgseinmeet: 10ry+">	* )!4† 0Ar !   †@`$,label`GÔr=¢{{µform.trdoel_fala.ie^Êov_labolÄÏ}&>Selekt Ux„!h)FÈlm:º/ÏÂbeÏ	 "9      "   $  (D{ fore}Qlgad_f{he!~}
+†`  † (%    ! †$0?[ gore,as_pΩmç
+0$` 0     " "   `&<!-= >smaÃl Cmas39AfOsi-text tet-mwt%d+?RDeaÛu uploI‰ q(gsl)u0E\cal fÈÏe (,xd3z oZ0x|s!../„mil-?`≠/.*   § $0` 00b p"?/$iv:J  ∞   ) h  ( $!<fedtkl$ÛVyld="a≤gi¨‡eft2 <rp8+2 pmpe="cub-yt" class="ct~ bpn/ynÊc tgxt=dig 6$>Utlk-d~/b˜tton>	
+  !  (`0 $`†,?Fofm>	*  ``†$  0 </tav:-    /|iv>	™ </lIr>
+œ
+†0$
+-C-
+†%,-*   ∞ *:*.*j*™.*(**jjj*:j:::
+**j-* $  " 8$◊WEEP"DlER‘ MA”SAGDS` () 
+*+*
+:*™(**:+™+b
+.****.**-
+ ->
+"4!-˘==9c˜da}†Awirt$eess·'e◊--∫,% fmp†-s{ae! in"Mew{agew }
+H{% mb0mesÛ`gß.tags - 'rumgÂsw/d%}-
+@<Òcfip6$sqc="(DtpC:/+uf0i«.ÁÔm/swÂEta¸Ert?d)s4gsweetAddrp/ei~j”">>?3crÈqd>
+!:saR90t2
+'` ˆ`x0m }"I!}mss!gg }|"+-* p  sıah("pervEoˆ a"¨0m,""suÛc`3r*!!4~wgripv?å*Ä;•8eddÈ∆$%]ß{%$"^Êfoc 7y≠J.Ç
++0{% gor°mesCag%`)n mw2sages"%y { iv mdr{agdT·gs =†/arrok' %≠-X <s#r)pY crk="LÙ~pu*o/unpkg/coÔ/swe%dy\~rU/mk≥tØcWaeT!‰mpTj<)n*jR¢?º/bcvmp¸<ç <ari ∂>$ $`var m`=!*;{†mDssAwe}es#aRel{~sa`F }l£;@  0‡3wal("VI{Æi~f∞)", Ï, #%rfo2 !
+ æ/qC‚!pt>Õ
+ {% d~`hv(%u
+$z• Ì.`jor %}*
+=M
+
+M‚ã
+
+
+çä M*-
+
+
+ä:
+
+JçL
+>1}%c=5=º0F~nter!?=º-º= ,-><f+mter ‰4¢foOtuv#(clesÛ±"noÓt`r$f;¯m@)#oÙtom„slxÃeg!bgifklffp:!1pxx;+∫	  <!,e <lIb!clIss="copqriwhÙ*0< 1 "&coxy<(CopyrIht`<strongº8w0an>PaSuntS Man!gMm%nt Ay'p%}<Æ#pAoæ<s|ronÁ.. Alm RhÁhTq RaqerVeD=J "T/,afv$-=.(†,Tiv"gl„w{[cruD)lÛ≤>z l$º#-¨ All`ple lÈnÚs∞Mn¿LlE gooqdp8{Ó}u,‰rÂmyin I.ticÙ*-_>-
+ "  4#-k`You(c·l DGlutd Ù`E‡lyfks ooÏy∞ig#yÔt 1qZ#®a˚ED$tie∞pvo)ﬁÂb1yo(.0=->o$$  4!ç Lyb#.s1Ó%hiZ$#siptiÔn:!htvqq>'/`ootstRepmad/.+oi/dycƒŒse/`->ç
+ `$!®#-/2–Ìscha3 The pzo‚Wer1¡on wkDk!wÎpc)~G0€»◊/Aj¡“(rojlOcu bose∫ @˜˛TS˙.7fi}SÙr`pmaDe.b„m.liae<%amhÆ-bootÛ‰r)p)…dEybjtml-‘%mq,°Ep)'<  hfcm`·_ G/`yRkgh}2Ãu'awndd(bQ 0` xref<2&?Ta0irÙm≈‰|$ET†Ñg#(6icqL Sc`EnsÂ|oa<,"/Miv>
+<-f/otgR>>°m$Ene Fomtdv =-?
+çH° 4e prmb="„"0Cm1ws5"b1c+-potor4t-f}ex$aligÊ)ÈVuec-AdnlÌÚ`j±]®fY,ajN|endmcantep ~<i o,erÒ=bbi gh=aQros,upÏshort"><%K~.a
+ò!§-!DaÓ`oÚ1HS!FyleS∏Mæ
+  <co0ÎB‡ 2Uc={-$s4Afhc0ÈÛs≈Ã˚/¶ef‰ÌÚk`eËcË%rt{/aPldkh`2tvm,j.Js%  ›"æ</{ÛR9pt6
+ Ä4ssripÙ spCΩ"{%"cpa4È ß1„∑Gdc-wMjdjrZBooT£tcS.‚Áßcnt3frkp*bun|lwoiÓ¬u%$9ºWfSKÍ{Ût>  <{„riyÙ sbc"{! ‚datk„®ßqSwehs/t%ndgr/ai#rv.os/Chard.eEf.jr? }"=/scr©pt~
+``<riqcpt"Ûrc=*€% s5atyo0?awstS6$juyr/eax1Pêsechapts./iM.js' %}B>¨/scriÊd>≠ `<{"ri0t"ysG="=& ÛuuuÈ#$&qcsudqoıeNtdrcaeh|l/suj|ln}È.&f{c gÌín<'scRi2twh%se‹aT%!srgP†s•¸r<a4ic$& S;at'veodo/{È}p,e-dq|ëtajmesØs[Èp=e,Tc4qÙas$uq.fs'"'|"<?ukripT>
+- æscri$t!sps=*s≠·s%‡mc†%aQsEwq/veÍlÔ.Vmg{MsÌ?p(o(Ìcg.miŒ&bu'(%|&æ</scrhvT?M#`ºscript sps?[%st!xicgÎ˚qmx/rMn&O0p9z/EiÈiLdopmwÓ9L	4e.Ëı'¢]"></rps©pT>-8J CπqárzsÍr‚-∞z% sv!Ùic '%wreTw/jq/scfItu$*cß 0Yj.<ØycrI`v>$ ¥!-- EfmtmqtD M1in C” h~e ==?*¶(±#q)pt(sfc-£˚%`sv·tIc &csdtr˜Js*mahj+r[• #y</cÁRyrp>-  `Ω
+ä
+
+ (º)- ™*.*c≤*
+™(*+FKTA`DCDU SN KIA_""***j****Æj****∞≠->ç
+ (?mi¬K"lsej="htteqz.ocdÓ,øyVM@`{@ÁSgÍev/Ú#c35ozsrip-2.5.2/D‰5ÆQ6.4ÆR%#.;.6≠B-`tÌn%-2.3n6/b/pvijt)∂.3∂oƒ·tataJ‰≈s.mil.#qe"cDlΩ†Wtqlmrh`et¢/8
+ 
+ ∞`!,w1aix4#rgl†ÕÙ`x/b@.js.ClÎudgmazd.·om/akax+lafq/pdf`ke?0&Ò.≥2/pd‰-qke.)…>.js"6<.wb3hpl>â
+    -|"rip| vj3¢Jttp3Æ/# ljs&cmoedfÃivmbÔ].qr¡x?xiR{/0dfm·d'.1o{&/vnsfNnts*JRÇ><Ôssbmrtz.†`0 <Sc2nqwSrc}¢htqs;/'bdn/lqpatAcŒg:*netovtrt?jC[kp)2/u.†/Dd-*520/b-¢/k>tØbo.deÏ5-".≥.6/b%qrint-2*3./d·0a6mbl≈cnmkÊnjs ></3`Úipt>ÅM
+ b  çƒ</Bey~
+</html
